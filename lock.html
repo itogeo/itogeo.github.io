@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Protected | Ito Geospatial</title>
+  <style>
+    body {
+      background-color: #121212;
+      color: #f5f5f5;
+      font-family: "Inter", sans-serif;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    h1 {
+      color: #3ddc97;
+      margin-bottom: 1rem;
+    }
+
+    input {
+      padding: 0.6rem 1rem;
+      border-radius: 8px;
+      border: none;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      outline: none;
+      text-align: center;
+    }
+
+    button {
+      background: #3ddc97;
+      color: #121212;
+      border: none;
+      border-radius: 8px;
+      padding: 0.6rem 1.2rem;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    button:hover {
+      background: #2ab97a;
+    }
+
+    .error {
+      color: #ff6961;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Ito Geospatial</h1>
+  <p>Enter password to access site:</p>
+  <input type="password" id="passwordInput" placeholder="Password">
+  <button onclick="checkPassword()">Enter</button>
+  <div id="error" class="error"></div>
+
+  <script>
+    // simple front-end gate
+    const correctPassword = "ito2025"; // <-- change this to your password
+
+    function checkPassword() {
+      const input = document.getElementById("passwordInput").value;
+      const error = document.getElementById("error");
+      if (input === correctPassword) {
+        localStorage.setItem("authorized", "true");
+        window.location.href = "index.html";
+      } else {
+        error.textContent = "Incorrect password. Try again.";
+      }
+    }
+
+    // If already logged in
+    if (localStorage.getItem("authorized") === "true") {
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>
