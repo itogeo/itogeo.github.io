@@ -175,6 +175,32 @@ nav a:hover {
   margin-top: 4rem;
 }
 
+/* Partner Logos Section */
+.partner-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin: 2rem auto;
+  max-width: 800px;
+}
+
+.partner-logos img {
+  height: 60px;
+  width: auto;
+  opacity: 0.85;
+  filter: grayscale(100%) brightness(0.9);
+  transition: filter 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
+}
+
+.partner-logos img:hover {
+  filter: grayscale(0%) brightness(1.1);
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+
 .clients h2 {
   color: #3ddc97;
   margin-bottom: 1.5rem;
