@@ -3,10 +3,12 @@
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background-color: #121212;
+  background-color: #121212; /* fallback color if JS doesn't load */
   color: #f5f5f5;
   line-height: 1.6;
+  transition: background 1.5s ease-in-out; /* fade between random backgrounds */
 }
+
 
 /* ---------------------------- */
 /* NAVIGATION */
@@ -16,11 +18,14 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background: rgba(18, 18, 18, 0.85);
-  position: sticky;
+  background: rgba(18, 18, 18, 0.95);
+  position: fixed;
   top: 0;
+  left: 0;
+  width: 100%;
   z-index: 1000;
   backdrop-filter: blur(6px);
+  transition: background 0.4s ease;
 }
 
 nav ul {
@@ -67,14 +72,16 @@ nav a:hover {
 /* HERO SECTION */
 /* ---------------------------- */
 .hero {
-  height: 90vh;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), #121212), url('../images/bg_topo.jpg') center/cover no-repeat;
+  height: 45vh; /* Smaller hero height */
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   padding: 2rem;
+  color: #f5f5f5;
+  position: relative;
 }
+
 
 .hero-content h1 {
   font-size: 2.8rem;
@@ -120,6 +127,31 @@ nav a:hover {
   text-align: center;
   margin-bottom: 2rem;
 }
+
+/* ABOUT SECTION ON HOME PAGE */
+.about-home {
+  background: #181818;
+  color: #f5f5f5;
+  padding: 5rem 2rem;
+  text-align: center;
+  border-top: 1px solid #222;
+  border-bottom: 1px solid #222;
+}
+
+.about-home h2 {
+  color: #3ddc97;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.about-home p {
+  max-width: 800px;
+  margin: 0 auto 1.5rem auto;
+  line-height: 1.8;
+  color: #ccc;
+  font-size: 1rem;
+}
+
 
 /* ---------------------------- */
 /* EXPERTISE GRID */
@@ -212,6 +244,54 @@ nav a:hover {
   max-width: 600px;
   margin: 1rem auto;
 }
+/* Partner Logos - Gentle back-and-forth scroll */
+.logo-scroll {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  margin: 2rem 0;
+}
+
+.logo-track {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  animation: scroll-bounce 18s ease-in-out infinite;
+}
+
+.logo-track img {
+  height: 70px;
+  width: auto;
+  opacity: 0.85;
+  filter: grayscale(100%) brightness(0.9);
+  transition: filter 0.2s ease, transform 0.2s ease;
+}
+
+.logo-track img:hover {
+  filter: grayscale(0%) brightness(1.1);
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+/* Keyframes for back-and-forth motion */
+@keyframes scroll-bounce {
+  0% {
+    transform: translateX(-5%);
+  }
+  50% {
+    transform: translateX(5%);
+  }
+  100% {
+    transform: translateX(-5%);
+  }
+}
+
+/* Remove underlines */
+.clients a {
+  text-decoration: none;
+}
+
 
 /* ---------------------------- */
 /* FOOTER */

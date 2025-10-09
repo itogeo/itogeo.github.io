@@ -1,45 +1,56 @@
-<script>
-  if (localStorage.getItem("authorized") !== "true") {
-    window.location.href = "lock.html";
-  }
-</script>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ito Geospatial | Precision Mapping & Hydrologic Intelligence</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ito Geospatial</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
-  <header>
-    <nav>
-      <a href="index.html" class="logo">
-        <img src="data/logo.png" alt="Ito Geospatial logo">
-        <span>Ito Geospatial</span>
-      </a>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="expertise.html">Expertise</a></li>
-      </ul>
-    </nav>
-  </header>
-  
+  <!-- Password check -->
+  <script>
+    if (localStorage.getItem("authorized") !== "true") {
+      window.location.href = "lock.html";
+    }
+  </script>
 
-  <section class="hero">
+  <!-- HEADER INCLUDE -->
+  <div data-include="partials/header.html"></div>
+
+  <!-- HERO SECTION (smaller height) -->
+  <section class="hero dynamic-bg">
     <div class="hero-content">
-      <h1>Precision Mapping & Hydrologic Intelligence</h1>
-      <p>Building advanced geospatial workflows for elevation, hydrology, and satellite data.</p>
-      <a href="about.html" class="btn">Learn More</a>
+      <h1>Empowering Data Through Precision Mapping</h1>
+      <p>
+        Geospatial intelligence and automation for data that moves the world forward.
+      </p>
+      <a href="expertise.html" class="btn">Explore Our Expertise</a>
     </div>
   </section>
 
-  <footer>
-    <p>© 2025 Ito Geospatial | Contact: <a href="mailto:itogeospatial@gmail.com">itogeospatial@gmail.com</a></p>
-  </footer>
-  <script src="assets/js/main.js"></script>
+  <!-- ABOUT SECTION (on home page now) -->
+  <section class="about-home">
+    <div class="about-content">
+      <h2>About Ito Geospatial</h2>
+      <p>
+        Ito Geospatial specializes in advanced remote sensing, elevation model correction,
+        and automated analysis workflows. We transform complex datasets into actionable insight
+        through precision, reproducibility, and clarity.
+      </p>
+      <p>
+        Our expertise spans digital elevation model enhancement, hydrologic correction,
+        and custom Python-based processing pipelines. By integrating cutting-edge automation,
+        we help clients achieve data consistency across large-scale geospatial projects worldwide.
+      </p>
+    </div>
+  </section>
+
+  <!-- FOOTER INCLUDE -->
+  <div data-include="partials/footer.html"></div>
+
+  <!-- JS -->
+  <script src="assets/js/load_partials.js"></script>
+  <script src="assets/js/backgrounds.js"></script>
+  <script src="assets/js/header_fade.js"></script>
 </body>
 </html>

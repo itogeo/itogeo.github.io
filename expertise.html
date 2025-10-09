@@ -1,23 +1,24 @@
-<script>
-  if (localStorage.getItem("authorized") !== "true") {
-    window.location.href = "lock.html";
-  }
-</script>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Expertise | Ito Geospatial</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
+  <!-- Password check -->
+  <script>
+    if (localStorage.getItem("authorized") !== "true") {
+      window.location.href = "lock.html";
+    }
+  </script>
+
+  <!-- HEADER -->
   <header>
     <nav>
       <a href="index.html" class="logo">
-        <img src="data/logo.png" alt="Ito Geospatial logo">
+        <img src="data/logo.png" alt="Ito Geospatial logo" />
         <span>Ito Geospatial</span>
       </a>
       <ul>
@@ -27,52 +28,74 @@
       </ul>
     </nav>
   </header>
-  
 
-  <section class="page-section">
+  <!-- EXPERTISE SECTION -->
+  <section class="page-section expertise-section">
     <h1>Our Expertise</h1>
     <div class="expertise-grid">
       <div class="card">
         <h2>Elevation & Hydrology Correction</h2>
-        <p>Advanced algorithms for DEM cleaning, hydrologic enforcement, and void-filling to produce seamless, downhill-consistent elevation data.</p>
+        <p>
+          Advanced algorithms for DEM cleaning, hydrologic enforcement, and
+          void-filling to produce seamless, downhill-consistent elevation data.
+        </p>
       </div>
       <div class="card">
         <h2>Satellite Data Processing</h2>
-        <p>Custom pipelines for Sentinel-2 and ESA datasets — automated mosaicking, cloud masking, and classification for global analysis.</p>
+        <p>
+          Custom pipelines for Sentinel-2 and ESA datasets — automated
+          mosaicking, cloud masking, and classification for global analysis.
+        </p>
       </div>
       <div class="card">
         <h2>Geospatial Automation</h2>
-        <p>Python-based workflows for data QC, transformation, and integration across large-scale mapping projects.</p>
+        <p>
+          Python-based workflows for data QC, transformation, and integration
+          across large-scale mapping projects.
+        </p>
       </div>
     </div>
   </section>
 
-  <div class="partner-logos">
-    <div class="partner-item">
-      <a href="https://www.gallatinwatershedcouncil.org/" target="_blank" rel="noopener noreferrer">
-        <img src="data/partner_logos/GWC_Logo.webp" alt="Gallatin Watershed Council">
-      </a>
-      <span>Gallatin Watershed Council</span>
-    </div>
-  
-    <div class="partner-item">
-      <a href="https://www.montana.edu/geospatial/" target="_blank" rel="noopener noreferrer">
-        <img src="data/partner_logos/MSU_GCF.png" alt="Montana State Geospatial Center">
-      </a>
-      <span>MSU Geospatial Center</span>
-    </div>
-  
-    <div class="partner-item">
-      <a href="https://www.zenithecon.com/" target="_blank" rel="noopener noreferrer">
-        <img src="data/partner_logos/ZenithEcon.png" alt="Zenith Economics">
-      </a>
-      <span>Zenith Economics</span>
-    </div>
-  </div>
-  
+  <!-- PARTNERS SECTION -->
+  <section class="clients">
+    <h2>Trusted by Our Partners</h2>
 
+    <section class="clients">
+      <h2>Trusted by Our Partners</h2>
+      <div class="logo-scroll">
+        <div class="logo-track">
+          <a href="https://www.mdt.mt.gov/" target="_blank" rel="noopener noreferrer">
+            <img src="data/partner_logos/MDT_logo.png" alt="Montana Department of Transportation">
+          </a>
+          <a href="https://www.gallatinwatershedcouncil.org/" target="_blank" rel="noopener noreferrer">
+            <img src="data/partner_logos/GWC_Logo.webp" alt="Gallatin Watershed Council">
+          </a>
+          <a href="https://www.montana.edu/geospatial/" target="_blank" rel="noopener noreferrer">
+            <img src="data/partner_logos/MSU_GCF.png" alt="MSU Geospatial Core Facility">
+          </a>
+          <a href="https://www.zenithecon.com/" target="_blank" rel="noopener noreferrer">
+            <img src="data/partner_logos/ZenithEcon.png" alt="Zenith Economics">
+          </a>
+          </a>
+          
+        </div>
+      </div>
+      <p class="reviews">"Exceptional precision and reliability in every dataset."</p>
+    </section>
+    
+
+    <p class="reviews">
+      "Exceptional precision and reliability in every dataset."
+    </p>
+  </section>
+
+  <!-- FOOTER -->
   <footer>
-    <p>© 2025 Ito Geospatial | Contact: <a href="mailto:itogeospatial@gmail.com">itogeospatial@gmail.com</a></p>
+    <p>
+      © 2025 Ito Geospatial | Contact:
+      <a href="mailto:itogeospatial@gmail.com">itogeospatial@gmail.com</a>
+    </p>
   </footer>
 </body>
 </html>
