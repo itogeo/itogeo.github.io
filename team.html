@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Team | Ito Geospatial</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <!-- Password check -->
+  <script>
+    if (localStorage.getItem("authorized") !== "true") {
+      window.location.href = "lock.html";
+    }
+  </script>
+
+  <!-- HEADER INCLUDE -->
+  <div data-include="partials/header.html"></div>
+
+  <main>
+    <!-- TEAM HERO -->
+    <section class="hero dynamic-bg team-hero">
+      <div class="hero-content">
+        <h1>Trusted Collaborators for Scoped Support</h1>
+        <p>
+          Ito Geospatial keeps engagements small on purpose. The collaborators below step in when a project needs targeted expertise,
+          and you can decide exactly who appears in client-facing materials by tweaking the team partial included on each page.
+        </p>
+      </div>
+    </section>
+
+    <!-- TEAM DIRECTORY -->
+    <div data-include="partials/team.html"></div>
+  </main>
+
+  <!-- FOOTER INCLUDE -->
+  <div data-include="partials/footer.html"></div>
+
+  <!-- JS -->
+  <script src="assets/js/load_partials.js"></script>
+  <script src="assets/js/backgrounds.js"></script>
+  <script src="assets/js/header_fade.js"></script>
+  <script src="assets/js/team.js"></script>
+</body>
+</html>

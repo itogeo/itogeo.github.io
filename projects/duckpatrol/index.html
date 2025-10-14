@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>DuckPatrol Map</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Leaflet -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <style>
+      html, body, #map {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      .legend {
+        background: white;
+        line-height: 1.5em;
+        padding: 6px 10px;
+        border-radius: 4px;
+        box-shadow: 0 0 5px rgba(0,0,0,0.3);
+      }
+      .legend i {
+        width: 16px;
+        height: 16px;
+        float: left;
+        margin-right: 8px;
+        opacity: 0.7;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="map"></div>
+
+    <script>
+      // Initialize map
+      const map = L.map('map').setView([45.68, -111.04], 11);
+
+      // Add base map
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>'
+      }).addTo(map);
+
+      // Function to load GeoJSON
+      function loadLayer(path, style, name) {
+        fetch(path)
+          .then(res => {
+            if (!res.ok) throw new Error(`HTTP ${res.status}`);
+            return res.json();
+          })
+          .then(data => {
+            const layer = L.geoJSON(data, {
+              style,
+              onEachFeature: (feature, lyr) => {
+                if (feature.properties)
+                  lyr.bindPopup(`<b>${name}</b><br>${JSON.stringify(feature.properties, null, 2)}`);
+              }
+            }).addTo(map);
+            layerControl.addOverlay(layer, name);
+          })
+          .catch(err => console.error(`Error loading ${name}:`, err));
+      }
+
+      // Layer control
+      const layerControl = L.control.layers(null, null, { collapsed: false }).addTo(map);
+
+      // Load layers
+      loadLayer('data/houses.geojson', {
+        color: '#ff7800',
+        weight: 2,
+        fillColor: '#ffa500',
+        fillOpacity: 0.6
+      }, 'Houses');
+
+      loadLayer('data/houses_within_1mile.geojson', {
+        color: '#0000ff',
+        weight: 2,
+        fillColor: '#3399ff',
+        fillOpacity: 0.4
+      }, 'Houses within 1 mile');
+
+      loadLayer('data/house_tiered_buffers.geojson', {
+        color: '#008000',
+        weight: 2,
+        fillColor: '#00ff00',
+        fillOpacity: 0.5
+      }, 'Tiered Buffers');
+
+      // Add legend
+      const legend = L.control({ position: 'bottomright' });
+      legend.onAdd = function () {
+        const div = L.DomUtil.create('div', 'legend');
+        div.innerHTML += '<i style="background:#ff7800"></i> Houses<br>';
+        div.innerHTML += '<i style="background:#3399ff"></i> Houses within 1 mile<br>';
+        div.innerHTML += '<i style="background:#00ff00"></i> Tiered Buffers<br>';
+        return div;
+      };
+      legend.addTo(map);
+    </script>
+  </body>
+</html>

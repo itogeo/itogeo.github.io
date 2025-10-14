@@ -1,0 +1,14 @@
+{
+"type": "FeatureCollection",
+"name": "waterway_link",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "waterway": "link" }, "geometry": { "type": "LineString", "coordinates": [ [ -111.3513374, 44.8647249 ], [ -111.350959, 44.8646642 ] ] } },
+{ "type": "Feature", "properties": { "waterway": "link" }, "geometry": { "type": "LineString", "coordinates": [ [ -111.2168591, 44.8030141 ], [ -111.216567, 44.8030104 ], [ -111.2164866, 44.8027222 ], [ -111.2161336, 44.8025041 ], [ -111.2157309, 44.8024046 ], [ -111.2156348, 44.8005602 ] ] } },
+{ "type": "Feature", "properties": { "waterway": "link" }, "geometry": { "type": "LineString", "coordinates": [ [ -111.2097014, 45.2973489 ], [ -111.2097138, 45.2975112 ] ] } },
+{ "type": "Feature", "properties": { "waterway": "link" }, "geometry": { "type": "LineString", "coordinates": [ [ -111.2294451, 45.4423087 ], [ -111.2295524, 45.442268 ] ] } },
+{ "type": "Feature", "properties": { "waterway": "link" }, "geometry": { "type": "LineString", "coordinates": [ [ -111.10333, 44.7154978 ], [ -111.1034158, 44.71553 ], [ -111.1034122, 44.7156449 ] ] } },
+{ "type": "Feature", "properties": { "waterway": "link" }, "geometry": { "type": "LineString", "coordinates": [ [ -111.5179482, 45.717389 ], [ -111.5181841, 45.7173474 ] ] } },
+{ "type": "Feature", "properties": { "waterway": "link" }, "geometry": { "type": "LineString", "coordinates": [ [ -111.5248181, 45.8994441 ], [ -111.5245926, 45.8995501 ] ] } }
+]
+}
