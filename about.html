@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Ito Geospatial</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <!-- Password check -->
+  <script>
+    if (localStorage.getItem("authorized") !== "true") {
+      window.location.href = "lock.html";
+    }
+  </script>
+
+  <!-- HEADER INCLUDE -->
+  <div data-include="partials/header.html"></div>
+
+  <main>
+    <!-- ABOUT HERO -->
+    <section class="hero dynamic-bg about-hero">
+      <div class="hero-content">
+        <h1>Practical Geospatial Support for Local Projects</h1>
+        <p>
+          Ito Geospatial helps municipalities, watershed groups, and regional agencies make sense of their terrain and imagery.
+        </p>
+      </div>
+    </section>
+
+    <!-- BIO SECTION -->
+    <section class="page-section about-intro">
+      <h1>Our Story</h1>
+      <div class="bio-grid">
+        <div>
+          <p>
+            Ito Geospatial is built to support the public sector with work that holds up under review. We bring remote sensing and
+            elevation expertise to teams that don't have an in-house GIS bench, helping them maintain good data, document decisions,
+            and stay ahead of the next floodplain or planning cycle.
+          </p>
+          <p>
+            The work is intentionally straightforward: gather the best available inputs, clean and align them, and hand back
+            products that real staff can maintain. When clients need field checks, model updates, or training, we stay involved
+            until the data is actually useful on the ground.
+          </p>
+        </div>
+        <aside class="bio-highlight">
+          <h3>Ian Van Dusen, Founder & Principal</h3>
+          <p>
+            Ian leads Ito Geospatial with a decade of experience aligning advanced elevation modeling,
+            floodplain analytics, and operational pipelines for teams that need answers faster than legacy
+            systems can provide them. His work blends hydrologic correction, spectral feature extraction,
+            and Python automation to remove the friction that often stalls geospatial initiatives.
+          </p>
+          <ul class="bio-list">
+            <li>Specializes in large-scale DEM refinement and water surface modeling</li>
+            <li>Develops reproducible, containerized processing chains for remote teams</li>
+            <li>Trusted partner to agencies and consultancies across the Mountain West</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- TEAM SECTION -->
+    <section class="page-section team-section">
+      <h2>Who You'll Work With</h2>
+      <p class="section-intro">
+        Ito Geospatial is intentionally small. Ian leads every engagement and brings in trusted collaborators only when the
+        project truly needs them.
+      </p>
+      <div class="team-grid">
+        <article class="team-card">
+          <div class="team-name-block">
+            <img src="data/logo.png" alt="Ito Geospatial mark" class="team-photo" loading="lazy" width="96" height="96" />
+            <div>
+              <h3 class="team-name">Ian Van Dusen</h3>
+              <p class="team-role">Founder & Principal Geospatial Scientist</p>
+            </div>
+          </div>
+          <p class="team-summary">
+            Drives strategy, advanced elevation modeling, and bespoke automation tooling. Ian keeps projects grounded
+            in client goals while ensuring the science stays sharp.
+          </p>
+          <ul class="team-tags">
+            <li>DEM Hydrology</li>
+            <li>Python</li>
+            <li>Workflow Automation</li>
+          </ul>
+        </article>
+        <article class="team-card">
+          <div class="team-name-block">
+            <img src="data/team/hvd.png" alt="Hannah Van Dusen" class="team-photo" loading="lazy" width="96" height="96" />
+            <div>
+              <h3 class="team-name">Hannah Van Dusen</h3>
+              <p class="team-role">Hydrologist, U.S. Forest Service</p>
+            </div>
+          </div>
+          <p class="team-summary">
+            Leads watershed investigations across the Intermountain West, pairing field observations with flow modeling to keep
+            culverts, crossings, and headwater streams resilient. Hannah earned her M.S. in Hydrology from the University of Nevada, Reno.
+          </p>
+          <ul class="team-tags">
+            <li>Watershed Management</li>
+            <li>Field Surveys</li>
+            <li>Forest Service Coordination</li>
+          </ul>
+        </article>
+        <article class="team-card">
+          <div class="team-name-block">
+            <img src="data/team/danny_wachino.png" alt="Danny Wachino" class="team-photo" loading="lazy" width="96" height="96" />
+            <div>
+              <h3 class="team-name">Danny Wachino</h3>
+              <p class="team-role">Remote Sensing Analyst</p>
+            </div>
+          </div>
+          <p class="team-summary">
+            Oregon graduate researcher focusing on satellite change detection while supporting tasking and analytics at Ursa Space.
+            Danny closes the loop between tasking catalogs, spectral indices, and actionable map deliverables.
+          </p>
+          <ul class="team-tags">
+            <li>Ursa Space</li>
+            <li>University of Oregon</li>
+            <li>Imagery Automation</li>
+          </ul>
+        </article>
+        <article class="team-card">
+          <div class="team-name-block">
+            <img src="data/team/j_poooole.png" alt="Jack Poole" class="team-photo" loading="lazy" width="96" height="96" />
+            <div>
+              <h3 class="team-name">Jack Poole</h3>
+              <p class="team-role">QA/QC & Ground Truth Lead</p>
+            </div>
+          </div>
+          <p class="team-summary">
+            Montana State M.S. candidate who brings structure to terrain validation and on-the-ground QA efforts. Jack designs
+            repeatable sampling plans, manages GNSS collection, and keeps deliverables defensible for permitting.
+          </p>
+          <ul class="team-tags">
+            <li>MSU Graduate Research</li>
+            <li>Ground Control</li>
+            <li>QA/QC</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- VALUES SECTION -->
+    <section class="page-section values-section">
+      <h2>How We Work</h2>
+      <div class="values-list">
+        <div>
+          <h3>Clarity First</h3>
+          <p>Plain-language findings with enough documentation that councils, boards, and permit reviewers trust the output.</p>
+        </div>
+        <div>
+          <h3>Rigorous & Repeatable</h3>
+          <p>Workflows are versioned, logged, and packaged so internal staff can rerun updates without guesswork.</p>
+        </div>
+        <div>
+          <h3>Side-by-Side Delivery</h3>
+          <p>We stay embedded until your team is comfortable owning the data, whether that's a simple training or a field day.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER INCLUDE -->
+  <div data-include="partials/footer.html"></div>
+
+  <!-- JS -->
+  <script src="assets/js/load_partials.js"></script>
+  <script src="assets/js/backgrounds.js"></script>
+  <script src="assets/js/header_fade.js"></script>
+</body>
+</html>

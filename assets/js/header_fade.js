@@ -1,24 +1,67 @@
-// assets/js/header_fade.js
+const MAX_FADE = 0.6;
 
-window.addEventListener("scroll", () => {
-    const nav = document.querySelector("nav");
-    const scrollY = window.scrollY;
-    const maxFade = 0.6; // how transparent it gets (0 = invisible, 1 = solid)
-  
-    // Calculate opacity based on scroll distance
-    const opacity = Math.max(1 - scrollY / 400, maxFade);
-    nav.style.background = `rgba(18, 18, 18, ${opacity})`;
-  });
-  
+const updateNavBackground = (nav) => {
+  if (!nav) return;
+  const scrollY = window.scrollY;
+  const opacity = Math.max(1 - scrollY / 400, MAX_FADE);
+  nav.style.background = `rgba(18, 18, 18, ${opacity})`;
+};
+
+const initNavInteractions = () => {
   const nav = document.querySelector("nav");
-  if (nav) {
-    nav.addEventListener("mouseenter", () => {
-      nav.style.background = "rgba(18, 18, 18, 0.95)";
+  if (!nav || nav.dataset.navInitialized === "true") {
+    return;
+  }
+
+  nav.dataset.navInitialized = "true";
+  updateNavBackground(nav);
+
+  nav.addEventListener("mouseenter", () => {
+    nav.style.background = "rgba(18, 18, 18, 0.95)";
+  });
+
+  nav.addEventListener("mouseleave", () => {
+    updateNavBackground(nav);
+  });
+
+  const navMenu = nav.querySelector("#nav-menu");
+  const navToggle = nav.querySelector(".nav-toggle");
+
+  if (navMenu && navToggle) {
+    navToggle.addEventListener("click", () => {
+      const isOpen = navMenu.classList.toggle("open");
+      navToggle.classList.toggle("is-open", isOpen);
+      navToggle.setAttribute("aria-expanded", isOpen);
     });
-    nav.addEventListener("mouseleave", () => {
-      const scrollY = window.scrollY;
-      const opacity = Math.max(1 - scrollY / 400, 0.6);
-      nav.style.background = `rgba(18, 18, 18, ${opacity})`;
+
+    navMenu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        if (window.innerWidth <= 768) {
+          navMenu.classList.remove("open");
+          navToggle.classList.remove("is-open");
+          navToggle.setAttribute("aria-expanded", "false");
+        }
+      });
     });
   }
-  
+};
+
+window.addEventListener("scroll", () => {
+  const nav = document.querySelector("nav");
+  updateNavBackground(nav);
+});
+
+window.addEventListener("resize", () => {
+  const nav = document.querySelector("nav");
+  if (!nav) return;
+  const navMenu = nav.querySelector("#nav-menu");
+  const navToggle = nav.querySelector(".nav-toggle");
+  if (navMenu && navToggle && window.innerWidth > 768) {
+    navMenu.classList.remove("open");
+    navToggle.classList.remove("is-open");
+    navToggle.setAttribute("aria-expanded", "false");
+  }
+});
+
+document.addEventListener("DOMContentLoaded", initNavInteractions);
+document.addEventListener("partialsLoaded", initNavInteractions);
