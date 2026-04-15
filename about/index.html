@@ -5,6 +5,47 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About | Ito Geospatial</title>
   <link rel="stylesheet" href="/assets/css/style.css" />
+  <style>
+    .bridgers-banner {
+      position: relative;
+      height: 380px;
+      background-image:
+        linear-gradient(to top, rgba(8, 24, 42, 0.55), rgba(8, 24, 42, 0.05) 55%, transparent),
+        url('/data/backgroundimages/bridgers.jpg');
+      background-size: cover;
+      background-position: center 55%;
+      display: flex;
+      align-items: flex-end;
+      margin: 1rem 0;
+    }
+    .bridgers-overlay {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem;
+      width: 100%;
+      color: #ffffff;
+    }
+    .bridgers-overlay h2 {
+      color: #ffffff;
+      font-size: clamp(1.5rem, 2.6vw, 2.1rem);
+      margin: 0;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      max-width: 720px;
+      line-height: 1.25;
+    }
+    .bridgers-credit {
+      position: absolute;
+      bottom: 0.4rem;
+      right: 0.75rem;
+      font-size: 0.62rem;
+      color: rgba(255, 255, 255, 0.55);
+    }
+    .bridgers-credit a { color: inherit; text-decoration: none; }
+    @media (max-width: 700px) {
+      .bridgers-banner { height: 260px; }
+    }
+  </style>
 </head>
 <body>
   <!-- HEADER INCLUDE -->
@@ -14,36 +55,58 @@
     <!-- ABOUT HERO -->
     <section class="hero dynamic-bg about-hero">
       <div class="hero-content">
-        <h1>Geospatial Tools That Work for Everyone</h1>
+        <p class="eyebrow">Bozeman, Montana</p>
+        <h1>About Ito Geospatial</h1>
         <p>
-          We're a team of engineers, scientists, and cartographers who believe the best mapping tools are the ones
-          your whole team can use—not just the GIS specialist.
+          A small mapping studio. We build remote sensing pipelines, interactive maps, and
+          StoryMaps for watershed councils, counties, utilities, and research teams.
         </p>
       </div>
     </section>
 
-    <!-- BIO SECTION -->
+    <!-- WHAT WE DO -->
     <section class="page-section about-intro">
-      <h1>Our Story</h1>
+      <h2>What we do</h2>
       <div class="bio-grid">
         <div>
           <p>
-            Based in Bozeman, Montana, we started Ito Geospatial because we kept seeing the same problem:
-            small governments and organizations needed professional mapping capabilities, but couldn't afford
-            a dedicated GIS department—or got handed tools so complex that only one person knew how to use them.
+            Most projects pair a custom data pipeline with a public-facing map — something a board
+            member can open on their phone and a staff engineer can rerun next quarter without calling us.
           </p>
           <p>
-            We build differently. Every workflow is designed to be run by your existing staff. Every map is
-            documented so your board members understand where the data comes from. Every tool is tested by
-            people who aren't GIS experts, because that's who'll be using it day-to-day.
-          </p>
-          <p>
-            The result? Agencies that can answer their own questions. Utilities that can update their own
-            asset maps. Watershed councils that can show stakeholders exactly what changed and why.
-            We hand over the keys—and stay on call when you need us.
+            We're picky about scope. A project is a fit if the answer depends on spatial data, the audience
+            reaches beyond GIS specialists, and you want the pipeline to outlive the contract.
           </p>
         </div>
       </div>
+    </section>
+
+    <!-- HOW WE WORK -->
+    <section class="page-section about-intro">
+      <h2>How we work</h2>
+      <div class="bio-grid">
+        <div>
+          <p>
+            The core team is small. The person scoping your project is the person writing the pipeline.
+            When a project needs specialists, we bring in long-term collaborators — MSU's Geospatial Core
+            Facility for peer-review rigor, Zenith Economics for policy and funding translation, and
+            independent surveyors and ML engineers when they fit.
+          </p>
+          <p>
+            Every deliverable ships with documentation, versioned data, and a clean handoff.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- BRIDGERS BANNER -->
+    <section class="bridgers-banner">
+      <div class="bridgers-overlay">
+        <h2>Based in Bozeman, working across the Mountain West.</h2>
+      </div>
+      <span class="bridgers-credit">
+        <a href="https://commons.wikimedia.org/wiki/File:Bridger_Mountains_at_dusk_-_Bozeman_Montana_-_2013-07-02.jpg" target="_blank" rel="noopener noreferrer">Tim Evanson, CC BY-SA 2.0</a>
+      </span>
     </section>
 
     <!-- TEAM SECTION INCLUDE -->
@@ -54,21 +117,27 @@
 
     <!-- VALUES SECTION -->
     <section class="page-section values-section">
-      <h2>How We Work</h2>
+      <h2>What you can expect</h2>
       <div class="values-list">
         <div>
-          <h3>Clarity First</h3>
-          <p>Plain-language findings with enough documentation that councils, boards, and field crews trust the output.</p>
+          <h3>No black boxes</h3>
+          <p>Every transformation is logged and versioned. If someone asks where a number came from, we can show them.</p>
         </div>
         <div>
-          <h3>Rigorous & Repeatable</h3>
-          <p>Workflows are versioned, logged, and packaged so internal staff can rerun updates without guesswork—even years later.</p>
+          <h3>Peer-reviewed rigor</h3>
+          <p>Pipelines are pressure-tested by the MSU Geospatial Core Facility before they ship.</p>
         </div>
         <div>
-          <h3>Side-by-Side Delivery</h3>
-          <p>We stay embedded until every stakeholder is comfortable using the data, whether that's a quick screen share or a field day.</p>
+          <h3>Built to be handed off</h3>
+          <p>You get working code, clean documentation, and training. We stay on call — you're not dependent on us.</p>
         </div>
       </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="page-section soft-panel" style="text-align: center;">
+      <h2>Have a project in mind?</h2>
+      <a href="/#contact" class="btn">Get in touch</a>
     </section>
   </main>
 

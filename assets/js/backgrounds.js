@@ -8,29 +8,75 @@ document.addEventListener("DOMContentLoaded", () => {
   ];
 
   const hero = document.querySelector(".dynamic-bg");
-  if (!hero || !bgImages.length) {
-    return;
+  if (!hero || !bgImages.length) return;
+
+  for (let i = bgImages.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [bgImages[i], bgImages[j]] = [bgImages[j], bgImages[i]];
   }
 
-  const randomImage = bgImages[Math.floor(Math.random() * bgImages.length)];
-  const image = new Image();
-  const imagePath = `/data/backgroundimages/${randomImage}`;
-  image.src = imagePath;
+  const computed = getComputedStyle(hero);
+  if (computed.position === "static") hero.style.position = "relative";
+  hero.style.overflow = "hidden";
 
-  const applyBackground = () => {
-    hero.style.backgroundImage = `url('${imagePath}')`;
-    hero.style.backgroundPosition = "center";
-    hero.style.backgroundSize = "cover";
-    hero.style.backgroundRepeat = "no-repeat";
-    hero.classList.add("hero-image-ready");
+  const makeLayer = () => {
+    const layer = document.createElement("div");
+    layer.className = "hero-bg-layer";
+    Object.assign(layer.style, {
+      position: "absolute",
+      inset: "0",
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      backgroundRepeat: "no-repeat",
+      opacity: "0",
+      transition: "opacity 1.8s ease-in-out",
+      pointerEvents: "none"
+    });
+    hero.prepend(layer);
+    return layer;
   };
 
-  if (image.complete) {
-    applyBackground();
-  } else {
-    image.addEventListener("load", applyBackground);
-    image.addEventListener("error", () => {
-      console.error(`Failed to load hero background ${imagePath}`);
-    });
+  const layerA = makeLayer();
+  const layerB = makeLayer();
+  let activeLayer = layerA;
+  let idleLayer = layerB;
+  let index = 0;
+
+  const content = hero.querySelector(".hero-content");
+  if (content) {
+    content.style.position = "relative";
+    content.style.zIndex = "2";
+  }
+
+  const path = (name) => `/data/backgroundimages/${name}`;
+
+  const setLayer = (layer, src) => new Promise((resolve) => {
+    const img = new Image();
+    img.src = src;
+    const apply = () => {
+      layer.style.backgroundImage = `url('${src}')`;
+      resolve();
+    };
+    if (img.complete) apply();
+    else {
+      img.addEventListener("load", apply);
+      img.addEventListener("error", resolve);
+    }
+  });
+
+  setLayer(activeLayer, path(bgImages[0])).then(() => {
+    activeLayer.style.opacity = "1";
+    hero.classList.add("hero-image-ready");
+  });
+
+  if (bgImages.length > 1) {
+    setInterval(() => {
+      index = (index + 1) % bgImages.length;
+      setLayer(idleLayer, path(bgImages[index])).then(() => {
+        idleLayer.style.opacity = "1";
+        activeLayer.style.opacity = "0";
+        [activeLayer, idleLayer] = [idleLayer, activeLayer];
+      });
+    }, 7000);
   }
 });

@@ -7,14 +7,16 @@
   <link rel="stylesheet" href="/assets/css/style.css" />
   <style>
     .tool-featured {
-      padding: 3rem 2rem;
-      max-width: 1200px;
+      padding: 1.75rem 2rem;
+      max-width: 1000px;
       margin: 0 auto;
     }
     .tool-featured-header {
       text-align: center;
-      margin-bottom: 2rem;
+      margin-bottom: 1.25rem;
     }
+    .tool-featured-header h2 { font-size: 1.6rem; }
+    .tool-featured-header p { font-size: 0.95rem; }
     .tool-featured-header h2 {
       color: var(--navy-900);
       margin-bottom: 0.5rem;
@@ -46,9 +48,221 @@
     }
     .tool-embed-container iframe {
       width: 100%;
-      height: 850px;
+      height: 560px;
       border: none;
       display: block;
+    }
+    .tool-link-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }
+    .tool-link-card {
+      background: var(--surface-card);
+      border: 1px solid rgba(32, 55, 89, 0.1);
+      border-radius: 12px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .tool-link-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(32, 55, 89, 0.12);
+    }
+    .tool-link-card h4 {
+      margin: 0;
+      color: var(--navy-900);
+    }
+    .tool-link-card p {
+      margin: 0;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.55;
+    }
+    .tool-link-card .tool-link-url {
+      margin-top: auto;
+      color: var(--accent-primary);
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+    /* Salmon River signup — river-themed hero card */
+    .salmon-section {
+      max-width: 900px;
+      margin: 1.5rem auto 2rem;
+      padding: 0 2rem;
+    }
+    .salmon-card {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      background:
+        linear-gradient(135deg, rgba(8, 42, 72, 0.78) 0%, rgba(12, 74, 110, 0.68) 45%, rgba(20, 108, 130, 0.55) 100%),
+        url('/data/backgroundimages/salmon_river.jpg');
+      background-size: cover;
+      background-position: center;
+      color: #f4f9ff;
+      padding: 2rem 2rem;
+      box-shadow: 0 14px 40px rgba(8, 42, 72, 0.28);
+    }
+    .salmon-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 15% 20%, rgba(120, 210, 255, 0.28), transparent 55%),
+        radial-gradient(circle at 85% 85%, rgba(80, 255, 200, 0.16), transparent 50%);
+      pointer-events: none;
+    }
+    .salmon-card > * { position: relative; z-index: 1; }
+    .salmon-eyebrow {
+      display: inline-block;
+      font-family: var(--mono, 'JetBrains Mono', monospace);
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #9fe5ff;
+      background: rgba(159, 229, 255, 0.12);
+      border: 1px solid rgba(159, 229, 255, 0.3);
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      margin-bottom: 1rem;
+    }
+    .salmon-card h2 {
+      color: #ffffff;
+      font-size: clamp(1.4rem, 2.6vw, 2rem);
+      line-height: 1.15;
+      margin: 0 0 0.6rem;
+      letter-spacing: -0.02em;
+    }
+    .salmon-card .salmon-lede {
+      font-size: 0.98rem;
+      line-height: 1.55;
+      color: rgba(244, 249, 255, 0.88);
+      max-width: 620px;
+      margin: 0 0 1rem;
+    }
+    .salmon-rivers {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin: 0.5rem 0 1.25rem;
+    }
+    .salmon-river-chip {
+      font-family: var(--mono, 'JetBrains Mono', monospace);
+      font-size: 0.8rem;
+      padding: 0.4rem 0.85rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: #e8f5ff;
+    }
+    .salmon-signup {
+      background: rgba(8, 24, 42, 0.55);
+      border: 1px solid rgba(159, 229, 255, 0.22);
+      border-radius: 12px;
+      padding: 1.1rem 1.25rem;
+      backdrop-filter: blur(6px);
+      max-width: 560px;
+    }
+    .salmon-signup-label {
+      font-size: 0.95rem;
+      color: #e8f5ff;
+      margin: 0 0 0.9rem;
+      line-height: 1.55;
+    }
+    .salmon-form {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+    .salmon-form input[type="email"] {
+      flex: 1 1 240px;
+      padding: 0.85rem 1rem;
+      border: 1px solid rgba(159, 229, 255, 0.28);
+      border-radius: 10px;
+      font-size: 1rem;
+      background: rgba(255, 255, 255, 0.95);
+      color: #0b2238;
+    }
+    .salmon-form input[type="email"]:focus {
+      outline: none;
+      border-color: #9fe5ff;
+      box-shadow: 0 0 0 3px rgba(159, 229, 255, 0.25);
+    }
+    .salmon-form button {
+      padding: 0.85rem 1.5rem;
+      border: none;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 1rem;
+      background: linear-gradient(135deg, #9fe5ff, #5ec8ff);
+      color: #042036;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .salmon-form button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 20px rgba(94, 200, 255, 0.35);
+    }
+    .salmon-disclaimer {
+      font-size: 0.78rem;
+      line-height: 1.55;
+      color: rgba(216, 232, 245, 0.7);
+      margin: 1.25rem 0 0;
+      max-width: 760px;
+    }
+    .salmon-photo-credit {
+      font-size: 0.7rem;
+      color: rgba(216, 232, 245, 0.55);
+      margin: 0.75rem 0 0;
+    }
+    .salmon-photo-credit a { color: inherit; text-decoration: underline; }
+
+    /* Section dividers: Passion vs. Client Work */
+    .section-divider {
+      max-width: 1000px;
+      margin: 2.25rem auto 0.75rem;
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .section-divider::before,
+    .section-divider::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(32, 55, 89, 0.18), transparent);
+    }
+    .section-divider-label {
+      font-family: var(--mono, 'JetBrains Mono', monospace);
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--navy-900);
+      white-space: nowrap;
+    }
+    .section-intro-block {
+      max-width: 720px;
+      margin: 0 auto 0.75rem;
+      padding: 0 2rem;
+      text-align: center;
+    }
+    .section-intro-block h2 {
+      color: var(--navy-900);
+      font-size: 1.35rem;
+      margin-bottom: 0.35rem;
+    }
+    .section-intro-block p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin: 0;
     }
     .tool-embed-fallback {
       padding: 3rem;
@@ -83,15 +297,16 @@
     }
     /* Project case study styles */
     .project-showcase {
-      padding: 3rem 2rem;
-      max-width: 1200px;
+      padding: 1.5rem 2rem;
+      max-width: 1000px;
       margin: 0 auto;
-      border-top: 1px solid rgba(32, 55, 89, 0.08);
     }
     .project-showcase-header {
       text-align: center;
-      margin-bottom: 2rem;
+      margin-bottom: 1.25rem;
     }
+    .project-showcase-header h2 { font-size: 1.45rem; }
+    .project-showcase-header p { font-size: 0.95rem; }
     .project-showcase-header h2 {
       color: var(--navy-900);
       margin-bottom: 0.5rem;
@@ -149,7 +364,7 @@
     }
     .project-map-embed iframe {
       width: 100%;
-      height: 500px;
+      height: 360px;
       border: none;
       display: block;
     }
@@ -162,107 +377,129 @@
     <section class="hero dynamic-bg tools-hero">
       <div class="hero-content">
         <p class="eyebrow">Free Tools</p>
-        <h1>Geospatial Tools for Everyone</h1>
+        <h1>Tools We've Built</h1>
         <p>
-          We're building free, open tools that make professional geospatial work accessible to small teams.
-          No expensive software licenses. No GIS degree required.
+          Free, public tools we maintain on our own time — because they matter to us, and because we use them
+          ourselves. Looking for client work? <a href="/projects/">See our projects →</a>
         </p>
       </div>
     </section>
 
-    <!-- MAP DIGITIZER - FEATURED TOOL -->
+    <!-- SNOWLINE - FEATURED TOOL -->
     <section class="tool-featured">
       <div class="tool-featured-header">
         <span class="free-badge">Free to Use</span>
-        <h2>Map Digitizer</h2>
+        <h2>Snowline — Montana Snow Cover</h2>
         <p>
-          Turn screenshots of zoning maps, planning documents, or any color-coded map image into georeferenced GeoJSON.
-          Upload an image, set control points to align it with real-world coordinates, and download export-ready data
-          for your GIS software.
-        </p>
-        <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.5rem;">
-          <em>Note: This is a free tool—it may take 20-30 seconds to wake up on first load.</em>
+          A daily-updated snow cover map for Montana built from Sentinel-2 and Landsat imagery, blended with SNOTEL
+          station data. Pan, zoom, and toggle layers to see where snow is lingering, melting, or piling up.
         </p>
       </div>
 
       <div class="tool-embed-container">
         <iframe
-          src="https://mapdigitizer.onrender.com/"
-          title="Map Digitizer Tool"
+          src="https://snowline.itogeospatial.com"
+          title="Snowline — Montana Snow Cover Map"
           loading="lazy"
-          allow="clipboard-write"
+          allow="fullscreen"
         ></iframe>
         <noscript>
           <div class="tool-embed-fallback">
-            <p>JavaScript is required to use the embedded tool.</p>
-            <a href="https://mapdigitizer.onrender.com/" class="btn" target="_blank" rel="noopener noreferrer">
-              Open Map Digitizer in New Tab
+            <p>JavaScript is required to view the embedded map.</p>
+            <a href="https://snowline.itogeospatial.com" class="btn" target="_blank" rel="noopener noreferrer">
+              Open Snowline in New Tab
             </a>
           </div>
         </noscript>
       </div>
+      <p style="text-align:center; margin-top: 1rem;">
+        <a href="https://snowline.itogeospatial.com" target="_blank" rel="noopener noreferrer">Open full-screen ↗</a>
+      </p>
 
-      <div class="tool-features">
-        <div class="tool-feature">
-          <h4>Automatic Street Detection</h4>
-          <p>OCR reads street names directly from your map image and finds intersections for georeferencing.</p>
-        </div>
-        <div class="tool-feature">
-          <h4>Smart Geocoding</h4>
-          <p>Uses OpenStreetMap to convert detected intersections into real-world coordinates.</p>
-        </div>
-        <div class="tool-feature">
-          <h4>Color-Based Zone Detection</h4>
-          <p>HSV analysis identifies zoning areas by color—residential, commercial, industrial, and more.</p>
-        </div>
-        <div class="tool-feature">
-          <h4>Multiple Export Formats</h4>
-          <p>Download as GeoJSON, Shapefile, KML, or KMZ for use in any GIS platform.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- MONTANA AIRPORT ECONOMIC STUDY -->
-    <section class="project-showcase">
-      <div class="project-showcase-header">
-        <h2>Featured Project</h2>
-        <p>
-          An example of the kind of work we do—translating complex data into accessible, shareable stories.
+      <!-- SNOTEL basin chart — embed below the main map (chart + inset map) -->
+      <div style="max-width: 860px; margin: 1.75rem auto 0;">
+        <h3 style="color: var(--navy-900); font-size: 1.05rem; margin-bottom: 0.25rem;">SNOTEL Basin Snapshot</h3>
+        <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.75rem;">
+          Every SNOTEL station in SW Montana, colored by today's snow depth against the 20-year median.
+          <a href="https://snowline.itogeospatial.com/metadata" target="_blank" rel="noopener noreferrer">Full catalog ↗</a>
         </p>
-      </div>
-      <div class="project-details">
-        <div class="project-info">
-          <h3>Montana Airport Economic Impact Study</h3>
-          <p>
-            In partnership with Zenith Economics and the MSU Geospatial Core Facility, we mapped the economic contributions of
-            airports across Montana. This StoryMap blends survey data, aviation infrastructure, and regional workforce trends to
-            keep legislators and funding partners aligned.
-          </p>
-          <ul>
-            <li>Statewide airport inventory tied to passenger counts and capital investments</li>
-            <li>Economic impact rollups that translate spatial analysis into policy-ready briefs</li>
-            <li>ArcGIS StoryMap delivery so rural and urban stakeholders share the same narrative</li>
-          </ul>
-        </div>
-        <div class="project-map-embed">
+        <div class="tool-embed-container">
           <iframe
-            src="https://storymaps.arcgis.com/stories/534906760ca243e0b4aee889878dd74f"
-            title="Montana Airport Economic Impact StoryMap"
+            src="https://snowline.itogeospatial.com/metadata?embed=basin"
+            title="Snowline SNOTEL Basin Chart"
             loading="lazy"
-            allowfullscreen
+            style="height: 560px;"
           ></iframe>
         </div>
       </div>
     </section>
 
+    <!-- SALMON RIVER PERMIT NOTIFICATIONS -->
+    <section class="salmon-section">
+      <div class="salmon-card">
+        <span class="salmon-eyebrow">In Development · Free to Join</span>
+        <h2>Catch a Cancellation on the Salmon.</h2>
+        <p class="salmon-lede">
+          Four Rivers Lottery permits are brutal to score. We're building a free notification list that watches
+          Recreation.gov and pings you the moment a date opens up — so you can head over and try to grab it.
+        </p>
+        <div class="salmon-rivers">
+          <span class="salmon-river-chip">Middle Fork Salmon</span>
+          <span class="salmon-river-chip">Main Salmon</span>
+          <span class="salmon-river-chip">Selway</span>
+        </div>
+
+        <div class="salmon-signup">
+          <p class="salmon-signup-label">
+            Drop your email and we'll add you to the list. No fee, no auto-booking — you still reserve through your
+            own Recreation.gov account.
+          </p>
+          <form class="salmon-form"
+                action="mailto:itogeospatial@gmail.com?subject=Salmon%20River%20Permit%20Notifications"
+                method="post"
+                enctype="text/plain">
+            <input type="email" name="email" placeholder="you@example.com" required />
+            <button type="submit">Join the list</button>
+          </form>
+        </div>
+
+        <p class="salmon-disclaimer">
+          Ito Geospatial is not affiliated with the U.S. Forest Service, the Bureau of Land Management, or
+          Recreation.gov. Notifications are informational only, provided on a best-effort basis, and carry no
+          guarantee of accuracy, availability, or success in booking a permit. All reservations must be completed
+          by the user directly on Recreation.gov under its Terms of Use. Email addresses are used only to send
+          these notifications and are never sold or shared. You can unsubscribe at any time by replying to any
+          message.
+        </p>
+        <p class="salmon-photo-credit">
+          Photo: "Salmon River near Lower Stanley, Idaho" by
+          <a href="https://www.flickr.com/photos/treegrow/15206299986/" target="_blank" rel="noopener noreferrer">Katja Schulz</a>,
+          <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener noreferrer">CC BY 2.0</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- ═════════  SMALLER UTILITIES  ═════════ -->
+    <div class="section-divider">
+      <span class="section-divider-label">Smaller Utilities</span>
+    </div>
+    <section class="tool-featured" style="padding-top: 0;">
+      <div class="tool-link-grid">
+        <a class="tool-link-card" href="https://mapdigitizer.onrender.com/" target="_blank" rel="noopener noreferrer">
+          <h4>Map Digitizer <em style="font-weight:400; color: var(--text-muted);">(beta)</em></h4>
+          <p>Turn screenshots of zoning or planning maps into georeferenced GeoJSON, Shapefile, or KML. Rough edges — we're still iterating.</p>
+          <span class="tool-link-url">mapdigitizer.onrender.com ↗</span>
+        </a>
+      </div>
+    </section>
+
     <!-- CTA -->
     <section class="page-section soft-panel" style="text-align: center;">
-      <h2>Need Something Custom?</h2>
+      <h2>Want to see client work?</h2>
       <p style="max-width: 600px; margin: 0 auto 1.5rem; color: var(--text-muted);">
-        These free tools are just a taste of what we build. If your team needs a custom workflow,
-        interactive dashboard, or specialized analysis—let's talk.
+        Projects we've built with watershed councils, economists, and public agencies.
       </p>
-      <a href="/#contact" class="btn">Get in Touch</a>
+      <a href="/projects/" class="btn">See Projects</a>
     </section>
   </main>
 
