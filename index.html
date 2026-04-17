@@ -6,79 +6,12 @@
   <title>Ito Geospatial</title>
   <link rel="stylesheet" href="/assets/css/style.css" />
   <style>
-    /* Project cards with accent bars */
-    .project-card {
-      position: relative;
-      overflow: hidden;
-      padding-top: 2.25rem !important;
-    }
-    .project-card::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 6px;
-    }
-    .project-card.card-snowline::before {
-      background: linear-gradient(90deg, #4FC3F7, #81D4FA, #ffffff);
-    }
-    .project-card.card-gallatin::before {
-      background: linear-gradient(90deg, #26A69A, #66BB6A, #C5E1A5);
-    }
-    .project-card.card-airport::before {
-      background: linear-gradient(90deg, #FF8A65, #FFB74D, #FFE082);
-    }
-    .project-card .card-tag {
-      display: inline-block;
-      font-family: var(--mono, 'JetBrains Mono', monospace);
-      font-size: 0.65rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 0.5rem;
-    }
     .project-card .card-cta {
       display: inline-block;
-      margin-top: 0.75rem;
+      margin-top: 0.5rem;
       color: var(--accent-primary);
       font-size: 0.85rem;
       font-weight: 600;
-    }
-
-    /* Richer about-home with Bridgers */
-    .about-home-rich {
-      position: relative;
-      background:
-        linear-gradient(135deg, rgba(247, 250, 255, 0.93) 0%, rgba(214, 227, 255, 0.88) 100%),
-        url('/data/backgroundimages/bridgers.jpg');
-      background-size: cover;
-      background-position: center 62%;
-      padding: 4.5rem 2rem;
-      text-align: center;
-      border-top: 1px solid rgba(32, 55, 89, 0.08);
-      border-bottom: 1px solid rgba(32, 55, 89, 0.08);
-    }
-    .about-home-rich .about-content { position: relative; z-index: 1; max-width: 760px; margin: 0 auto; }
-    .about-home-rich h2 {
-      color: var(--navy-900);
-      font-size: clamp(1.5rem, 2.6vw, 2rem);
-      margin: 0 0 0.5rem;
-      letter-spacing: -0.01em;
-    }
-    .about-home-rich p {
-      color: var(--text-body);
-      font-size: 1.05rem;
-      line-height: 1.75;
-      margin: 0 auto;
-      max-width: 680px;
-    }
-    .about-home-rich .bridger-credit {
-      position: absolute;
-      bottom: 0.4rem;
-      right: 0.75rem;
-      font-size: 0.62rem;
-      color: var(--text-muted);
-      opacity: 0.55;
-      text-decoration: none;
     }
   </style>
 </head>
@@ -90,126 +23,83 @@
     <!-- HERO SECTION -->
     <section class="hero dynamic-bg">
       <div class="hero-content">
-        <p class="eyebrow">Geospatial for Everyone</p>
-        <h1>Powerful Mapping Tools.<br>No GIS Degree Required.</h1>
-        <p>
-          We help small governments, utilities, and community organizations harness professional-grade geospatial technology.
-          Our tools are built so anyone on your team can use them—from first-day interns to seasoned directors.
-        </p>
+        <h1>Ito Geospatial</h1>
+        <p>Mapping studio in Bozeman, Montana.</p>
         <div class="hero-actions">
-          <a href="/tools/" class="btn">See Our Tools</a>
-          <a href="/about/" class="btn btn-outline">Meet the Team</a>
+          <a href="/tools/" class="btn">Tools</a>
+          <a href="/projects/" class="btn btn-outline">Projects</a>
         </div>
       </div>
     </section>
 
-    <!-- WHY ITO SECTION -->
+    <!-- WHAT WE DO -->
     <section class="why-ito-section">
       <div class="why-ito-grid">
         <div class="why-ito-card">
-          <div class="why-ito-icon">01</div>
-          <h3>Built for Small Teams</h3>
-          <p>You don't need a full GIS department. We design workflows that a two-person office can run and maintain.</p>
+          <h3>Mapping & Remote Sensing</h3>
+          <p>Satellite imagery, lidar, elevation models. Interactive maps your whole team can use.</p>
         </div>
         <div class="why-ito-card">
-          <div class="why-ito-icon">02</div>
-          <h3>Tools That Stick</h3>
-          <p>Every deliverable comes with documentation and training so your staff can rerun analyses years from now.</p>
+          <h3>Priority & Suitability Analysis</h3>
+          <p>Rank parcels, sites, or risks with transparent, repeatable spatial scoring.</p>
         </div>
         <div class="why-ito-card">
-          <div class="why-ito-icon">03</div>
-          <h3>No Black Boxes</h3>
-          <p>We show our work. Every transformation is logged, versioned, and ready for public review or audit.</p>
+          <h3>GIS for Small Teams</h3>
+          <p>Professional-grade pipelines sized for a three-person office. No dedicated GIS department needed.</p>
         </div>
       </div>
     </section>
 
     <!-- RECENT WORK -->
-    <section class="page-section" style="background: rgba(32, 55, 89, 0.03);">
-      <header style="text-align:center; max-width: 680px; margin: 0 auto 2rem;">
-        <h2>Recent work</h2>
-      </header>
+    <section class="why-ito-section">
       <div class="why-ito-grid">
-        <a class="why-ito-card project-card card-snowline" href="/tools/" style="text-decoration: none; color: inherit;">
-          <span class="card-tag">Passion Project</span>
+        <a class="why-ito-card" href="https://snowline.itogeospatial.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
+          <div class="why-ito-icon">01</div>
           <h3>Snowline</h3>
-          <p>Daily Montana snow cover, built from Sentinel-2, Landsat, and SNOTEL.</p>
-          <span class="card-cta">See the map →</span>
+          <p>Daily Montana snow cover from Sentinel-2, Landsat, and SNOTEL.</p>
+          <span class="card-cta">snowline.itogeospatial.com ↗</span>
         </a>
-        <a class="why-ito-card project-card card-gallatin" href="/projects/" style="text-decoration: none; color: inherit;">
-          <span class="card-tag">Client Work · GWC</span>
+        <a class="why-ito-card" href="https://gwc.itogeospatial.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
+          <div class="why-ito-icon">02</div>
           <h3>Gallatin Continuity</h3>
           <p>Habitat and hydrologic continuity StoryMap with the Gallatin Watershed Council.</p>
-          <span class="card-cta">Read the story →</span>
+          <span class="card-cta">gwc.itogeospatial.com ↗</span>
         </a>
-        <a class="why-ito-card project-card card-airport" href="/projects/" style="text-decoration: none; color: inherit;">
-          <span class="card-tag">Client Work · Zenith + MSU</span>
+        <a class="why-ito-card" href="https://storymaps.arcgis.com/stories/534906760ca243e0b4aee889878dd74f" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
+          <div class="why-ito-icon">03</div>
           <h3>MT Airport Economic Impact</h3>
-          <p>Statewide airport economics mapping — legislator-ready StoryMap.</p>
-          <span class="card-cta">Read the story →</span>
+          <p>Statewide airport economics with Zenith Economics and MSU GCF.</p>
+          <span class="card-cta">View StoryMap ↗</span>
         </a>
       </div>
-      <p style="text-align:center; margin-top: 2rem;">
-        <a href="/tools/" class="btn" style="margin-right: 0.5rem;">Tools</a>
-        <a href="/projects/" class="btn btn-outline">Projects</a>
-      </p>
     </section>
 
-    <!-- ABOUT SECTION -->
-    <section class="about-home-rich">
-      <div class="about-content">
-        <h2>Based in Bozeman, Montana</h2>
-        <p>
-          We're a small studio working with counties, watershed councils, utilities, and research teams.
-          We build the pipelines, maps, and StoryMaps — and we leave behind tools your staff can run themselves.
-        </p>
-      </div>
-      <a class="bridger-credit"
-         href="https://commons.wikimedia.org/wiki/File:Bridger_Mountains_at_dusk_-_Bozeman_Montana_-_2013-07-02.jpg"
-         target="_blank" rel="noopener noreferrer">Tim Evanson, CC BY-SA 2.0</a>
-    </section>
+    <!-- TEAM + PARTNERS -->
+    <div id="about" data-include="/partials/team.html"></div>
+    <div data-include="/partials/partners.html"></div>
 
     <section id="contact" class="page-section contact-section">
       <div class="contact-grid">
         <div class="contact-intro">
-          <h2>Let's Build Something</h2>
-          <p>
-            Whether you're a three-person county office or a regional utility, we'll help you stand up
-            geospatial tools that your team can actually use—and keep using long after we're gone.
-          </p>
-          <ul class="contact-services">
-            <li>Interactive maps your board members can navigate without training</li>
-            <li>Data pipelines your staff can rerun with a single click</li>
-            <li>Documentation that makes sense to non-specialists</li>
-            <li>On-call support when questions come up in the field</li>
-          </ul>
-          <p>
-            Tell us about your project. We'll figure out the right approach together.
-          </p>
+          <h2>Get in Touch</h2>
+          <p>Interested in working together, collaborating on a project, or just want to say hello. Cheers.</p>
         </div>
-        <form class="contact-form" action="mailto:itogeospatial@gmail.com" method="post" enctype="text/plain">
+        <form class="contact-form" action="https://formsubmit.co/itogeospatial@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="Ito Geospatial — Interest Form" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_next" value="https://itogeospatial.com/?submitted=true" />
+          <input type="text" name="_honey" style="display:none" />
+
           <label for="contact-name">Name</label>
           <input id="contact-name" name="name" type="text" required />
 
           <label for="contact-email">Email</label>
           <input id="contact-email" name="email" type="email" required />
 
-          <label for="contact-organization">Organization</label>
-          <input id="contact-organization" name="organization" type="text" />
+          <label for="contact-message">Project</label>
+          <textarea id="contact-message" name="message" rows="4" placeholder="What are you working on?"></textarea>
 
-          <label for="contact-services">Services of interest</label>
-          <select id="contact-services" name="services">
-            <option value="remote-sensing">Remote sensing & imagery analytics</option>
-            <option value="elevation">Elevation & hydrology refinement</option>
-            <option value="automation">Automation & data pipelines</option>
-            <option value="legal">Legal & policy coordination</option>
-            <option value="general">General consultation</option>
-          </select>
-
-          <label for="contact-message">Project details</label>
-          <textarea id="contact-message" name="message" rows="5" placeholder="Share goals, timelines, or existing data sources"></textarea>
-
-          <button type="submit" class="btn">Send Message</button>
+          <button type="submit" class="btn">Send</button>
         </form>
       </div>
     </section>
@@ -222,6 +112,7 @@
   <script src="/assets/js/load_partials.js"></script>
   <script src="/assets/js/backgrounds.js"></script>
   <script src="/assets/js/header_fade.js"></script>
+  <script src="/assets/js/team.js"></script>
 </body>
 </html>
 <!-- deployed Wed Jan 28 09:52:46 MST 2026 -->

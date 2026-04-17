@@ -376,24 +376,16 @@
   <main>
     <section class="hero dynamic-bg tools-hero">
       <div class="hero-content">
-        <p class="eyebrow">Free Tools</p>
-        <h1>Tools We've Built</h1>
-        <p>
-          Free, public tools we maintain on our own time — because they matter to us, and because we use them
-          ourselves. Looking for client work? <a href="/projects/">See our projects →</a>
-        </p>
+        <h1>Tools</h1>
+        <p>Free tools we build and maintain. <a href="/projects/">Projects →</a></p>
       </div>
     </section>
 
     <!-- SNOWLINE - FEATURED TOOL -->
     <section class="tool-featured">
       <div class="tool-featured-header">
-        <span class="free-badge">Free to Use</span>
-        <h2>Snowline — Montana Snow Cover</h2>
-        <p>
-          A daily-updated snow cover map for Montana built from Sentinel-2 and Landsat imagery, blended with SNOTEL
-          station data. Pan, zoom, and toggle layers to see where snow is lingering, melting, or piling up.
-        </p>
+        <h2>Snowline</h2>
+        <p>Daily Montana snow cover from Sentinel-2, Landsat, and SNOTEL.</p>
       </div>
 
       <div class="tool-embed-container">
@@ -435,13 +427,12 @@
     </section>
 
     <!-- SALMON RIVER PERMIT NOTIFICATIONS -->
-    <section class="salmon-section">
+    <section id="salmon" class="salmon-section">
       <div class="salmon-card">
-        <span class="salmon-eyebrow">In Development · Free to Join</span>
-        <h2>Catch a Cancellation on the Salmon.</h2>
+        <span class="salmon-eyebrow">In Development</span>
+        <h2>Salmon River Permit Alerts</h2>
         <p class="salmon-lede">
-          Four Rivers Lottery permits are brutal to score. We're building a free notification list that watches
-          Recreation.gov and pings you the moment a date opens up — so you can head over and try to grab it.
+          We watch Recreation.gov for cancellations on the Four Rivers permits and email you when a date opens up.
         </p>
         <div class="salmon-rivers">
           <span class="salmon-river-chip">Middle Fork Salmon</span>
@@ -451,13 +442,15 @@
 
         <div class="salmon-signup">
           <p class="salmon-signup-label">
-            Drop your email and we'll add you to the list. No fee, no auto-booking — you still reserve through your
-            own Recreation.gov account.
+            Drop your email. No fee, no auto-booking — you book through Recreation.gov yourself.
           </p>
           <form class="salmon-form"
-                action="mailto:itogeospatial@gmail.com?subject=Salmon%20River%20Permit%20Notifications"
-                method="post"
-                enctype="text/plain">
+                action="https://formsubmit.co/itogeospatial@gmail.com"
+                method="POST">
+            <input type="hidden" name="_subject" value="Salmon River Permit — New Signup" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_next" value="https://itogeospatial.com/tools/?joined=true" />
+            <input type="text" name="_honey" style="display:none" />
             <input type="email" name="email" placeholder="you@example.com" required />
             <button type="submit">Join the list</button>
           </form>
